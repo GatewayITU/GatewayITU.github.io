@@ -10,21 +10,13 @@
     font-family: "Questrial", sans-serif;
 }
 
-:root{
-    --gwOrange:#F07C03;
-    --gwPink:#E71B72;
-    --gwPurple:#971881;
-    --gwBlue:#282D81;
-    --gwCyan:#3FA8E1;
-}
-
 
 
 /*-----------GENERAL-----------*/
 
 a {
     text-decoration: none;
-    color: var(--gwCyan);
+    color: #3FA8E1;
 }
 
 .section {
@@ -64,7 +56,7 @@ a {
     background-attachment: fixed;
 
     line-height: 1.5;
-    color: var(--gwOrange);
+    color: #F07C03;
 }
 
 #section-home h1 {
@@ -339,7 +331,7 @@ a {
 }
 
 #section-about a {
-    color: var(--gwBlue);
+    color: #282D81;
 }
 
 /*-----------------------------*/
