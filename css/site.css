@@ -165,65 +165,16 @@ a {
 
 
 
-/*-----------MEMBERS-----------*/
+/*-----------JOIN-----------*/
 
-#section-members {
+#section-join {
     background-image: url(../images/gateway-members-background.jpg);
     min-height: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-
-    color: white;
-}
-
-#section-members .inner-section h1 {
-    padding-top: 5vw;
-    font-size: 36px;
-}
-
-.member:last-child {
-    padding-bottom: 5vw;
-}
-
-.member {
-    margin: 20px 5%;
-    float: left;
-    width: 40%
-}
-
-.clearfix:after { 
-   content: "."; 
-   visibility: hidden; 
-   display: block; 
-   height: 0; 
-   clear: both;
-}
-
-.member-image {
-    border: 2px solid white;
-    width: 100%;
-    border-radius: 50%;
-}
-
-.member h3 {
-    padding-top: 10px;
-    font-size: 2.5vw;
-}
-
-.member h2 {
-    padding-top: 5px;
-    font-size: 3vw;
-}
-
-/*-----------------------------*/
-
-
-
-/*-----------JOIN-----------*/
-
-#section-join {
+    
     line-height: 1.5;
     color: white;
 }
@@ -272,6 +223,55 @@ a {
 .joinButton:active {
     position:relative;
     top:1px;
+}
+
+/*-----------------------------*/
+
+
+
+/*-----------MEMBERS-----------*/
+
+#section-members {
+    color: white;
+}
+
+#section-members .inner-section h1 {
+    padding-top: 5vw;
+    font-size: 36px;
+}
+
+.member:last-child {
+    padding-bottom: 5vw;
+}
+
+.member {
+    margin: 20px 5%;
+    float: left;
+    width: 40%
+}
+
+.clearfix:after { 
+   content: "."; 
+   visibility: hidden; 
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+
+.member-image {
+    border: 2px solid white;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.member h3 {
+    padding-top: 10px;
+    font-size: 2.5vw;
+}
+
+.member h2 {
+    padding-top: 5px;
+    font-size: 3vw;
 }
 
 /*-----------------------------*/

@@ -229,12 +229,12 @@ $(document).ajaxStop(function () {
   if(screenSize.matches) {
   	$('#fullpage').fullpage({
   		sectionsColor: ['#1C1C1C', '#F07C03', '#282D81', '#E71B72', '#971881', '#3FA8E1'],
-  		anchors: ['home', 'events', 'members', 'join', 'submit', 'about'],
+  		//anchors: ['home', 'events', 'join', 'members', 'submit', 'about'],
   		menu: '#menu',
   		scrollingSpeed: 800,
   		scrollBar: true,
   		navigation: true,
-  		navigationTooltips: ['Home', 'Events', 'Members', 'Join', 'Submit', 'About'],
+  		navigationTooltips: ['Home', 'Events', 'Join', 'Organization', 'Social Media', 'About'],
   		showActiveTooltip: true,
   		slidesNavigation: true,
   		slidesNavPosition: 'bottom',
@@ -243,7 +243,7 @@ $(document).ajaxStop(function () {
   } else {
   	$('#fullpage').fullpage({
   		sectionsColor: ['#1C1C1C', '#F07C03', '#282D81', '#E71B72', '#971881', '#3FA8E1'],
-  		anchors: ['home', 'events', 'members', 'join', 'submit', 'about'],
+  		//anchors: ['home', 'events', 'join', 'members', 'submit', 'about'],
   		menu: '#menu',
   		scrollingSpeed: 800,
   		scrollBar: true,
@@ -253,4 +253,6 @@ $(document).ajaxStop(function () {
   		scrollOverflow: true
   	});
   }
+
+  window.dispatchEvent(new Event('resize'));
 });
