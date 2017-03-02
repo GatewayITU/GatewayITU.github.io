@@ -40,7 +40,7 @@ function callback(data){
 		rowObj.date = cells[i].title.$t;
 		var rowCols = cells[i].content.$t.split(',');
 		for (var j = 0; j < rowCols.length; j++){
-			var keyVal = rowCols[j].split(':');
+			var keyVal = rowCols[j].split(/:(.+)/);
 			rowObj[keyVal[0].trim()] = keyVal[1].trim();
 		}
 		rows.push(rowObj);
@@ -52,20 +52,20 @@ function callback(data){
 		var eventLink = "";
 
 		if(nextEvent.link != "N/A") {
-			eventLink = "https://www.facebook.com/events/" + nextEvent.link;
+			eventLink = nextEvent.link;
 		}
 
-		var imageRef = "";
+		var image = "";
 
 		if(nextEvent.image != "N/A") {
-			imageRef = nextEvent.image;
+			image = nextEvent.image;
 		}
 
 		events.push({
 			name: nextEvent.name,
 			date: new Date(nextEvent.date),
 			link: eventLink,
-			image: imageRef
+			image: image
 		});
 	};
 }
@@ -113,10 +113,7 @@ function getHeadlineFromEvent(gatewayEvent) {
 function getEventHTML(gatewayEvent) {
 	var imageString = gatewayEvent.image;
 	if(imageString == "") {
-		imageString = "placeholder";
-	}
-	else {
-		imageString = gatewayEvent.date.getFullYear() + "/" + imageString;
+		imageString = "images/events/placeholder.png";
 	}
 
 	var dateString = monthNames[gatewayEvent.date.getMonth()] + " " + gatewayEvent.date.getDate();
@@ -134,7 +131,7 @@ function getEventHTML(gatewayEvent) {
 		linkString = "<a href=\"" + linkString + "\" target=\"_blank\"><h3>Facebook Event</h3></a>";
 	}
 
-	var htmlString = "<div class=\"event\"><img src=\"images/events/" + imageString + ".jpg\" class=\"event-image\"><h2>" + 
+	var htmlString = "<div class=\"event\"><img src=\"" + imageString + "\" class=\"event-image\"><h2>" + 
 	gatewayEvent.name + "</h2><h3>" + dateString + "</h3>" + linkString + "</div>";
 
 	return htmlString;
