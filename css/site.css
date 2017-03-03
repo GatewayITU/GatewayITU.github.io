@@ -337,6 +337,36 @@ a {
 /*-----------------------------*/
 
 
+
+
+/*-----------FORM-----------*/
+
+#section-form {
+    background-image: url(../images/gateway-home-background.jpg);
+    min-height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: white;
+}
+
+#section-form .inner-section h1 {
+    padding-bottom: 30px;
+    font-size: 36px;
+}
+
+#section-form p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/*-----------------------------*/
+
+
+
+
 /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
 @media screen and (min-width: 600px) {
 
@@ -462,6 +492,10 @@ a {
     #section-about h3 {
         font-size: 16px;
     }
+
+    #section-form p {
+        font-size: 16px;
+    }
 }
 
 /* hi-res laptops and desktops */
@@ -499,6 +533,10 @@ a {
     }
 
     #section-about h3 {
+        font-size: 18px;
+    }
+
+    #section-form p {
         font-size: 18px;
     }
 }
