@@ -229,7 +229,7 @@ $(document).ajaxStop(function () {
   if(screenSize.matches) {
   	$('#fullpage').fullpage({
   		sectionsColor: ['#1C1C1C', '#F07C03', '#282D81', '#E71B72', '#971881', '#3FA8E1'],
-  		//anchors: ['home', 'events', 'join', 'members', 'submit', 'about'],
+  		anchors: ['home', 'events', 'join', 'members', 'social-media', 'about'],
   		menu: '#menu',
   		scrollingSpeed: 800,
   		scrollBar: true,
@@ -243,7 +243,7 @@ $(document).ajaxStop(function () {
   } else {
   	$('#fullpage').fullpage({
   		sectionsColor: ['#1C1C1C', '#F07C03', '#282D81', '#E71B72', '#971881', '#3FA8E1'],
-  		//anchors: ['home', 'events', 'join', 'members', 'submit', 'about'],
+  		anchors: ['home', 'events', 'join', 'members', 'social-media', 'about'],
   		menu: '#menu',
   		scrollingSpeed: 800,
   		scrollBar: true,
