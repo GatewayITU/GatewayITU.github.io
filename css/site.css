@@ -298,6 +298,22 @@ a {
     margin-bottom: 20px;
 }
 
+.iframe-fix {
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 64px);
+    max-width: 1000px
+}
+
+#instagram-feed {
+    border: 2px solid white; 
+    overflow: hidden; 
+    width: calc(100% - 64px);
+    max-width: 1000px; 
+    height: 250px
+}
+
 /*-----------------------------*/
 
 
