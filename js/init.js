@@ -124,7 +124,10 @@ function getEventHTML(gatewayEvent) {
 
 	var linkString = gatewayEvent.link;
 
-	if(linkString == "") {
+	if(gatewayEvent.link == "Internal") {
+		linkString = "<a href=\"#join\"><h3>Join Us!</h3></a>";
+	}
+	else if(linkString == "") {
 		linkString = "<h3>FB Event Not Available</h3>";
 	}
 	else {
