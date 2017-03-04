@@ -48,12 +48,11 @@ a {
 /*-----------HOME-----------*/
 
 #section-home {
-    background-image: url(../images/gateway-home-background.jpg);
-    min-height: 100%;
+    background: url(../images/gateway-home-background.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
 
     line-height: 1.5;
     color: #F07C03;
@@ -168,12 +167,11 @@ a {
 /*-----------JOIN-----------*/
 
 #section-join {
-    background-image: url(../images/gateway-members-background.jpg);
-    min-height: 100%;
+    background: url(../images/gateway-members-background.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     
     line-height: 1.5;
     color: white;
@@ -281,12 +279,11 @@ a {
 /*-----------SUBMIT-----------*/
 
 #section-submit {
-    background-image: url(../images/gateway-submit-background.jpg);
-    min-height: 100%;
+    background: url(../images/gateway-submit-background.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
 
     color: white;
 }
@@ -342,12 +339,11 @@ a {
 /*-----------FORM-----------*/
 
 #section-form {
-    background-image: url(../images/gateway-home-background.jpg);
-    min-height: 100%;
+    background: url(../images/gateway-home-background.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
 
     color: white;
 }
