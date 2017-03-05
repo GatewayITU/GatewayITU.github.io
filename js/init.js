@@ -1,37 +1,20 @@
 //Names for the months
 var monthNames = ["January", "February", "March", "April", "May", "June",
-"July", "August", "September", "October", "November", "December"
-];
+"July", "August", "September", "October", "November", "December"];
 
 //Get current date, set time to midnight (00:00:00) on the day
 var now = new Date();
 now.setHours(0,0,0);
 
-//Old event management
-/*
-//Create upcoming events
-var hangoutEvent = {name: "Gateway's Annual Multicultural Hangout", date: new Date("2017-02-01"), link: "https://www.facebook.com/events/1632810623688153/"};
-var cheeseWineEvent = {name: "Cheese and Wine Tasting #2", date: new Date("2017-03-09"), link: "https://www.facebook.com/events/201926730284808/"};
-var fitnessEvent = {name: "Fitness Tournament", date: new Date("2017-03-15"), link: "https://www.facebook.com/gatewayitu/"};
-var pubCrawlEvent = {name: "Pub Crawl", date: new Date("2017-03-24"), link: "https://www.facebook.com/gatewayitu/"};
-var fatFightEvent = {name: "Fat Fight Night", date: new Date("2017-04-07"), link: "https://www.facebook.com/gatewayitu/"};
-var bingoEvent = {name: "Bingo Night", date: new Date("2017-05-05"), link: "https://www.facebook.com/gatewayitu/"};
-var openAirEvent = {name: "Open-Air Cinema", date: new Date("2017-05-17"), link: "https://www.facebook.com/gatewayitu/"};
-var coffeeEvent = {name: "Coffee Tasting", date: new Date("2017-12-31"), link: "https://www.facebook.com/gatewayitu/"};
-
-//Add events to array of upcoming events (make sure these are in order of soonest date first)
-var upcomingEvents = [
-	hangoutEvent, cheeseWineEvent, fitnessEvent, pubCrawlEvent, bingoEvent, fatFightEvent, openAirEvent, coffeeEvent
-]
-*/
-
 //URL to Google Spreadsheet with list of events - JSON-callback
-var JSONURL = 'https://spreadsheets.google.com/feeds/list/1n4GwSrPCq439gsotoixBkuWgeM2jEx7SwiI-W_QxG20/1/public/basic?alt=json';
+var EVENTSURL = 'https://spreadsheets.google.com/feeds/list/1n4GwSrPCq439gsotoixBkuWgeM2jEx7SwiI-W_QxG20/1/public/basic?alt=json';
+var MEMBERSURL = 'https://spreadsheets.google.com/feeds/list/12t973vlQj85qEobwE1U9OQ8weOTGXhNStpJlUnyi-AU/1/public/basic?alt=json';
 
 //Import JSON
 var events = [];
+var members = [];
 
-function callback(data){
+function getEvents(data){
 	var rows = [];
 	var cells = data.feed.entry;
 
@@ -65,6 +48,39 @@ function callback(data){
 			name: nextEvent.name,
 			date: new Date(nextEvent.date),
 			link: eventLink,
+			image: image
+		});
+	};
+}
+
+function getMembers(data){
+	var rows = [];
+	var cells = data.feed.entry;
+
+	for (var i = 0; i < cells.length; i++){
+		var rowObj = {};
+		rowObj.name = cells[i].title.$t;
+		var rowCols = cells[i].content.$t.split(',');
+		for (var j = 0; j < rowCols.length; j++){
+			var keyVal = rowCols[j].split(/:(.+)/);
+			rowObj[keyVal[0].trim()] = keyVal[1].trim();
+		}
+		rows.push(rowObj);
+	}
+
+	for (var i = 0; i < rows.length; i++) {
+		var nextMember = rows[i];
+
+		var image = "";
+
+		if(nextMember.image != "N/A") {
+			image = nextMember.image;
+		}
+
+		members.push({
+			name: nextMember.name,
+			programme: nextMember.programme,
+			position: nextMember.position,
 			image: image
 		});
 	};
@@ -183,9 +199,9 @@ function getAllEventsForYearHTML(year) {
 
 	//Prev/next arrows have been temporarily removed - not sure of the best way to implement this
 	var htmlString = "<div class=\"slide\"><div class=\"inner-section\"><div>" /*<a href=\"#events/2\" class=\"arrow-left\"></a>*/ + "<h1>" + 
-					 year + " Events</h1>" /*<a href=\"#events/1\" class=\"arrow-right\"></a>*/ + "</div>" +
-					 eventsString + 
-					 "</div></div>";
+	year + " Events</h1>" /*<a href=\"#events/1\" class=\"arrow-right\"></a>*/ + "</div>" +
+	eventsString + 
+	"</div></div>";
 
 	return htmlString;
 }
@@ -203,16 +219,45 @@ function getAllEventsHTML() {
 }
 
 
+function getMemberHTML(member) {
+	var htmlString = "<div class=\"member\"><img src=\"" + 
+					member.image +"\" class=\"member-image\"><h3>" + 
+					member.name + ", " + 
+					member.programme + "</h3><h2>" + 
+					member.position + "</h2></div>";
+
+	return htmlString;
+}
+
+function getAllMembersHTML() {
+	var finalString = "<h1>Organization</h1>";
+
+	for (var i = 0; i < members.length; i++) {
+		finalString += getMemberHTML(members[i]);
+	};
+
+	return finalString;
+}
+
+
 
 //--------------EXECUTION------------------------
 $(document).ready(function() {
 	//Load events from database
 	$.ajax({
-		url:JSONURL,
+		url:EVENTSURL,
 		success: function(data){
-			callback(data);
+			getEvents(data);
 		}
 	});
+
+	//Load members from database
+	$.ajax({
+		url:MEMBERSURL,
+		success: function(data){
+			getMembers(data);
+		}
+	});	
 });
 
 //Once data has been loaded, setup HTML and the Fullpage.js plugin
@@ -224,6 +269,8 @@ $(document).ajaxStop(function () {
 
   //Retrieve events
   document.getElementById('section-events').innerHTML = getAllEventsHTML();
+
+  document.getElementById('member-section').innerHTML = getAllMembersHTML();
 
   //Check whether we are on a small mobile screen
   var screenSize = window.matchMedia( "(min-width: 480px)" );
