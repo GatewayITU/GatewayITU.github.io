@@ -48,7 +48,7 @@ a {
 /*-----------HOME-----------*/
 
 #section-home {
-    background: url(../images/gateway-home-background.jpg) no-repeat center center fixed; 
+    background: url(../images/gateway-home-background.jpg) no-repeat center center scroll; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -167,7 +167,7 @@ a {
 /*-----------JOIN-----------*/
 
 #section-join {
-    background: url(../images/gateway-members-background.jpg) no-repeat center center fixed; 
+    background: url(../images/gateway-members-background.jpg) no-repeat center center scroll; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -279,7 +279,7 @@ a {
 /*-----------SUBMIT-----------*/
 
 #section-submit {
-    background: url(../images/gateway-submit-background.jpg) no-repeat center center fixed; 
+    background: url(../images/gateway-submit-background.jpg) no-repeat center center scroll; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -343,7 +343,7 @@ a {
 /*-----------FORM-----------*/
 
 #section-form {
-    background: url(../images/gateway-home-background.jpg) no-repeat center center fixed; 
+    background: url(../images/gateway-home-background.jpg) no-repeat center center scroll; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
