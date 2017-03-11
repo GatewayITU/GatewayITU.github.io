@@ -288,9 +288,12 @@ $(document).ajaxStop(function () {
   		showActiveTooltip: true,
   		slidesNavigation: true,
   		slidesNavPosition: 'bottom',
-  		scrollOverflow: true
+  		scrollOverflow: true,
+  		touchSensitivity: 30
   	});
-  } else {
+  }
+  // NOW YOU ARE ON MOBILE 
+  else {
   	$('#fullpage').fullpage({
   		sectionsColor: ['#1C1C1C', '#F07C03', '#282D81', '#E71B72', '#971881', '#3FA8E1'],
   		anchors: ['home', 'events', 'join', 'members', 'social-media', 'about'],
@@ -300,7 +303,8 @@ $(document).ajaxStop(function () {
   		navigation: true,
   		slidesNavigation: true,
   		slidesNavPosition: 'bottom',
-  		scrollOverflow: true
+  		scrollOverflow: true,
+  		touchSensitivity: 30
   	});
   }
 
