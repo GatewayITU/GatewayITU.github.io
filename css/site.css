@@ -90,7 +90,7 @@ a {
 #section-events {
     color: white;
 }
-
+/*
 .arrow-left {
     display: inline-block;
     width: 0; 
@@ -114,15 +114,31 @@ a {
 
     margin-left: 10px;
 }
-
+*/
 /*Remove original left button*/
 .fp-controlArrow.fp-prev {
+    position: static;
+    margin-top: 0;
+    margin-right: 10px;
+    border-width: 10px 15px 10px 0;
     display: none;
 }
 
 /*Remove original right button*/
 .fp-controlArrow.fp-next {
+    position: static;
+    margin-top: 0;
+    margin-left: 10px;
+    border-width: 10px 0 10px 15px;
     display: none;
+}
+
+#left-arrow {
+    display: inline-block;
+}
+
+#right-arrow {
+    display: inline-block;
 }
 
 .fp-slidesNav.bottom {
@@ -132,7 +148,7 @@ a {
 
 #section-events .inner-section h1 {
     padding-top: 5vw;
-    font-size: 36px;
+    font-size: 26px;
     display: inline-block;
 }
 
@@ -378,6 +394,26 @@ a {
     #fp-nav ul li .fp-tooltip.right {
         text-shadow: 2px 2px 2px black;
         padding-right: 5px;
+    }
+
+    /*Remove original left button*/
+    .fp-controlArrow.fp-prev {
+        position: static;
+        margin-right: 15px;
+        border-width: 12px 20px 12px 0;
+        display: none;
+    }
+
+    /*Remove original right button*/
+    .fp-controlArrow.fp-next {
+        position: static;
+        margin-left: 15px;
+        border-width: 12px 0 12px 20px;
+        display: none;
+    }
+
+    #section-events .inner-section h1 {
+        font-size: 36px;
     }
 
     .event {

@@ -198,8 +198,8 @@ function getAllEventsForYearHTML(year) {
 	};
 
 	//Prev/next arrows have been temporarily removed - not sure of the best way to implement this
-	var htmlString = "<div class=\"slide\"><div class=\"inner-section\"><div>" /*<a href=\"#events/2\" class=\"arrow-left\"></a>*/ + "<h1>" + 
-	year + " Events</h1>" /*<a href=\"#events/1\" class=\"arrow-right\"></a>*/ + "</div>" +
+	var htmlString = "<div class=\"slide\"><div class=\"inner-section\"><div>" + "<div id=\"left-arrow\" class=\"fp-controlArrow fp-prev\"></div>" + "<h1>" + 
+	year + " Events</h1>" + "<div  id=\"right-arrow\" class=\"fp-controlArrow fp-next\"></div>" + "</div>" +
 	eventsString + 
 	"</div></div>";
 
@@ -217,8 +217,8 @@ function getAllUpcomingEventsHTML() {
 	};
 
 	//Prev/next arrows have been temporarily removed - not sure of the best way to implement this
-	var htmlString = "<div class=\"slide\"><div class=\"inner-section\"><div>" /*<a href=\"#events/2\" class=\"arrow-left\"></a>*/ + 
-	"<h1>Upcoming Events</h1>" /*<a href=\"#events/1\" class=\"arrow-right\"></a>*/ + "</div>" +
+	var htmlString = "<div class=\"slide\"><div class=\"inner-section\"><div>"  + "<div id=\"left-arrow\" class=\"fp-controlArrow fp-prev\"></div>" + 
+	"<h1>Upcoming Events</h1>" + "<div id=\"right-arrow\" class=\"fp-controlArrow fp-next\"></div>" + "</div>" +
 	eventsString + 
 	"</div></div>";
 
