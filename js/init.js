@@ -206,9 +206,31 @@ function getAllEventsForYearHTML(year) {
 	return htmlString;
 }
 
+function getAllUpcomingEventsHTML() {
+	var eventsString = "";
+
+	for (var i = 0; i < events.length; i++) {
+		if(events[i].date > now) {
+			eventsString += getEventHTML(events.splice(i,1)[0]);
+			i--;
+		}
+	};
+
+	//Prev/next arrows have been temporarily removed - not sure of the best way to implement this
+	var htmlString = "<div class=\"slide\"><div class=\"inner-section\"><div>" /*<a href=\"#events/2\" class=\"arrow-left\"></a>*/ + 
+	"<h1>Upcoming Events</h1>" /*<a href=\"#events/1\" class=\"arrow-right\"></a>*/ + "</div>" +
+	eventsString + 
+	"</div></div>";
+
+	return htmlString;
+}
+
 
 function getAllEventsHTML() {
 	var finalString = "";
+
+	finalString += getAllUpcomingEventsHTML();
+
 	var years = findYears();
 
 	for (var i = years.length - 1; i >= 0; i--) {
@@ -262,7 +284,6 @@ $(document).ready(function() {
 
 //Once data has been loaded, setup HTML and the Fullpage.js plugin
 $(document).ajaxStop(function () {
-	getAllEventsHTML();
 
   //Set info about next upcoming event on home page
   document.getElementById('next-event-info').innerHTML = getHeadlineFromEvent(getNextEvent());
@@ -270,6 +291,7 @@ $(document).ajaxStop(function () {
   //Retrieve events
   document.getElementById('section-events').innerHTML = getAllEventsHTML();
 
+  //Retrieve members
   document.getElementById('member-section').innerHTML = getAllMembersHTML();
 
   //Check whether we are on a small mobile screen
