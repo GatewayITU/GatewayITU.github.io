@@ -109,6 +109,9 @@ function getHeadlineFromEvent(gatewayEvent) {
 	if(linkString == "") {
 		linkString = "<h2>Facebook Event currently unavailable.</h2>";
 	}
+	else if (linkString == "Internal") {
+		linkString = "</h2><h2>Read more <a href=\"#join\">here</a></h2>";
+	}
 	else {
 		linkString = "</h2><h2>Read more <a target=\"_blank\" href=\"" + linkString + "\">here</a></h2>";
 	}
