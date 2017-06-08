@@ -116,11 +116,17 @@ function getHeadlineFromEvent(gatewayEvent) {
 		linkString = "</h2><h2>Read more <a target=\"_blank\" href=\"" + linkString + "\">here</a></h2>";
 	}
 
+	var dateString = monthNames[gatewayEvent.date.getMonth()] + 
+	" " + gatewayEvent.date.getDate() + ", " + 
+	gatewayEvent.date.getFullYear();
+
+	if(gatewayEvent.date.getDate() == 31 && gatewayEvent.date.getMonth() == 11) {
+		dateString = "Date TBD";
+	}
+
 	var eventString = "<h3>NEXT EVENT:</h3><h1>" + 
 	gatewayEvent.name + "</h1><h2>" + 
-	monthNames[gatewayEvent.date.getMonth()] + 
-	" " + gatewayEvent.date.getDate() + ", " + 
-	gatewayEvent.date.getFullYear() + linkString;
+	dateString + linkString;
 
 	return eventString;
 }
