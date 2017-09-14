@@ -59,7 +59,8 @@ a {
 }
 
 #section-home h1 {
-    font-size: 5vh;
+    font-size: 4vh;
+    font-weight: bold;
 }
 
 #section-home h2 {
@@ -70,8 +71,8 @@ a {
     font-size: 3vh;
 }
 
-#gateway-logo {
-    width: 35vh;
+#ituconnect-logo {
+    width: 40vh;
 }
 
 .social-media-logo img {
