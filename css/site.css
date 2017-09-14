@@ -89,6 +89,12 @@ a {
 
 #section-events {
     color: white;
+    background: url(../images/gateway-events-background.jpg) no-repeat center center scroll; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
 }
 /*
 .arrow-left {
@@ -247,6 +253,11 @@ a {
 
 #section-members {
     color: white;
+    background: url(../images/gateway-events-background.jpg) no-repeat center center scroll; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 #section-members .inner-section h1 {
@@ -327,6 +338,11 @@ a {
 #section-about {
     line-height: 1.5;
     color: white;
+    background: url(../images/gateway-events-background.jpg) no-repeat center center scroll; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 #section-about .inner-section h1 {

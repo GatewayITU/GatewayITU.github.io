@@ -309,7 +309,7 @@ $(document).ajaxStop(function () {
   //Show labels, if not on mobile
   if(screenSize.matches) {
   	$('#fullpage').fullpage({
-  		sectionsColor: ['#1C1C1C', '#F07C03', '#282D81', '#E71B72', '#971881', '#3FA8E1'],
+  		sectionsColor: ['#1C1C1C', '#f07d22', '#1C1C1C', '#f07d22', '#1C1C1C', '#f07d22'],
   		anchors: ['home', 'events', 'join', 'members', 'social-media', 'about'],
   		menu: '#menu',
   		scrollingSpeed: 800,
