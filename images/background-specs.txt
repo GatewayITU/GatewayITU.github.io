@@ -1,0 +1,13 @@
+Vignette:
+- Radius: 0,75
+- Density: 0,90
+
+Gaussian Blur: 15
+
+Color:
+R: 240
+G: 125
+B: 34
+Opacity: 150
+
+Black + Opacity(150)

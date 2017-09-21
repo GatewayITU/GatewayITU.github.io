@@ -72,7 +72,8 @@ a {
 }
 
 #ituconnect-logo {
-    width: 40vh;
+    width: 80vw;
+    margin: 10vh 0 5vh 0;
 }
 
 .social-media-logo img {
@@ -190,7 +191,7 @@ a {
 /*-----------JOIN-----------*/
 
 #section-join {
-    background: url(../images/gateway-members-background.jpg) no-repeat center center scroll; 
+    background: url(../images/gateway-join-background.jpg) no-repeat center center scroll; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -254,7 +255,7 @@ a {
 
 #section-members {
     color: white;
-    background: url(../images/gateway-events-background.jpg) no-repeat center center scroll; 
+    background: url(../images/gateway-members-background.jpg) no-repeat center center scroll; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -304,10 +305,10 @@ a {
 
 
 
-/*-----------SUBMIT-----------*/
+/*-----------SOCIAL MEDIA-----------*/
 
-#section-submit {
-    background: url(../images/gateway-submit-background.jpg) no-repeat center center scroll; 
+#section-social-media {
+    background: url(../images/gateway-social-media-background.jpg) no-repeat center center scroll; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -316,16 +317,16 @@ a {
     color: white;
 }
 
-#section-submit .inner-section h1 {
+#section-social-media .inner-section h1 {
     font-size: 36px;
 }
 
-#section-submit .inner-section h2 {
+#section-social-media .inner-section h2 {
     margin-top: 30px;
     margin-bottom: 20px;
 }
 
-#section-submit p {
+#section-social-media p {
     font-size: 14px;
     margin-bottom: 20px;
 }   
@@ -339,7 +340,7 @@ a {
 #section-about {
     line-height: 1.5;
     color: white;
-    background: url(../images/gateway-events-background.jpg) no-repeat center center scroll; 
+    background: url(../images/gateway-about-background.jpg) no-repeat center center scroll; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -499,6 +500,10 @@ a {
 
 /* tablet, landscape iPad, lo-res laptops ands desktops */
 @media screen and (min-width: 801px) {
+    #ituconnect-logo {
+        width: 60vw;
+    }
+
     .event {
         width: 30%;
         margin: 20px 1.65%;
@@ -534,7 +539,7 @@ a {
         font-size: 16px;
     }
 
-    #section-submit p {
+    #section-social-media p {
         font-size: 16px;
     }
 
@@ -577,7 +582,7 @@ a {
         font-size: 18px;
     }
 
-    #section-submit p {
+    #section-social-media p {
         font-size: 18px;
     }
 
